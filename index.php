@@ -6,10 +6,10 @@ $method = $_SERVER['REQUEST_METHOD'];
 if($method == 'POST'){
 	$requestBody = file_get_contents('php://input');
 	$json = json_decode($requestBody);
-print_r($json); die;
+
 	$firstNumber = $json->result->parameters->firstNumber;
 	$secondNumber = $json->result->parameters->secondNumber;
-	$speech ="Hi, Nice to meet you ".$firstNumber+$secondNumber;
+	$speech ="Hi, Nice to meet you ".$firstNumber.'Second no is '.$secondNumber;
 //print_r($firstNumber); die;
 	/*switch ($text) {
 		case 'hi':
