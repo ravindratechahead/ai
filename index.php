@@ -7,9 +7,11 @@ if($method == 'POST'){
 	$requestBody = file_get_contents('php://input');
 	$json = json_decode($requestBody);
 
-	$text = $json->result->parameters->text;
-print_r($text); die;
-	switch ($text) {
+	$firstNumber = $json->result->parameters->firstNumber;
+	$secondNumber = $json->result->parameters->secondNumber;
+	$speech ="Hi, Nice to meet you ".$firstNumber+$secondNumber;
+//print_r($firstNumber); die;
+	/*switch ($text) {
 		case 'hi':
 			$speech = "Hi, Nice to meet you";
 			break;
@@ -25,7 +27,7 @@ print_r($text); die;
 		default:
 			$speech = "Sorry, I didnt get that. Please ask me something else.";
 			break;
-	}
+	}*/
 
 	$response = new \stdClass();
 	$response->speech = $speech;
