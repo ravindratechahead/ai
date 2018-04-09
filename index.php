@@ -16,7 +16,7 @@ if($method == 'POST'){
 			$speech = "your answer is ".($firstNumber+$secondNumber);
 			break;
 
-		case 'multiply':
+		case 'Multiply':
 			$speech = "your answer is ".($firstNumber*$secondNumber);
 			break;
 
